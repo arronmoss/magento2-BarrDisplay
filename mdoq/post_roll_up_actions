@@ -61,6 +61,7 @@ case $INPUT in
          "$ARGUMENT_STEP_BEFORE_DATA_MIGRATION-$ARGUMENT_COMPARISON_IDENTICAL")
             set -xe
             # do something
+            sed -i 's/ name=\"magento1\" /  name=\"magento1\" port=\"6033\" /g' ./vendor/magento/data-migration-tool/etc/opensource-to-opensource/1.9.4.5/config.xml.dist;
             ;;
 
         "$ARGUMENT_STEP_AFTER_DATA_MIGRATION-$ARGUMENT_COMPARISON_IDENTICAL")
