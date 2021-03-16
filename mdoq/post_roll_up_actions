@@ -1,0 +1,87 @@
+#!/bin/bash
+
+ARGUMENT_COMPARISON_AHEAD=AHEAD
+ARGUMENT_COMPARISON_IDENTICAL=IDENTICAL
+ARGUMENT_COMPARISON_BEHIND=BEHIND
+
+ARGUMENT_STEP_BEFORE_COMPOSER=BEFORE_COMPOSER
+ARGUMENT_STEP_BEFORE_MAGENTO_COMMANDS=BEFORE_MAGENTO_COMMANDS
+ARGUMENT_STEP_BEFORE_COMMON_TOOLS=BEFORE_COMMON_TOOLS
+ARGUMENT_STEP_BEFORE_DATA_MIGRATION=BEFORE_DATA_MIGRATION
+ARGUMENT_STEP_AFTER_DATA_MIGRATION=AFTER_DATA_MIGRATION
+ARGUMENT_STEP_FINAL=FINAL
+
+INPUT="$1-$2"
+
+cd ~/htdocs;
+m2db_host=$(php -r '$env = include "./app/etc/env.php"; echo $env["db"]["connection"]["default"]["host"].PHP_EOL;');
+m2db_user=$(php -r '$env = include "./app/etc/env.php"; echo $env["db"]["connection"]["default"]["username"].PHP_EOL;');
+m2db_password=$(php -r '$env = include "./app/etc/env.php"; echo $env["db"]["connection"]["default"]["password"].PHP_EOL;');
+m2db_database=$(php -r '$env = include "./app/etc/env.php"; echo $env["db"]["connection"]["default"]["dbname"].PHP_EOL;');
+
+case $INPUT in
+        "$ARGUMENT_STEP_BEFORE_COMPOSER-$ARGUMENT_COMPARISON_AHEAD")
+            set -xe
+            # do something
+            ;;
+        "$ARGUMENT_STEP_BEFORE_COMPOSER-$ARGUMENT_COMPARISON_IDENTICAL")
+            set -xe
+            # do something
+            cp app/etc/config.php app/etc/config.php.pra_dupe
+            ;;
+        "$ARGUMENT_STEP_BEFORE_COMPOSER-$ARGUMENT_COMPARISON_BEHIND")
+            set -xe
+            # do something
+            ;;
+        "$ARGUMENT_STEP_BEFORE_MAGENTO_COMMANDS-$ARGUMENT_COMPARISON_AHEAD")
+            set -xe
+            # do something
+            ;;
+        "$ARGUMENT_STEP_BEFORE_MAGENTO_COMMANDS-$ARGUMENT_COMPARISON_IDENTICAL")
+            set -xe
+            # do something
+            ;;
+        "$ARGUMENT_STEP_BEFORE_MAGENTO_COMMANDS-$ARGUMENT_COMPARISON_BEHIND")
+            set -xe
+            # do something
+            ;;
+        "$ARGUMENT_STEP_BEFORE_COMMON_TOOLS-$ARGUMENT_COMPARISON_AHEAD")
+            set -xe
+            # do something
+            ;;
+        "$ARGUMENT_STEP_BEFORE_COMMON_TOOLS-$ARGUMENT_COMPARISON_IDENTICAL")
+            set -xe
+            # do something
+            ;;
+        "$ARGUMENT_STEP_BEFORE_COMMON_TOOLS-$ARGUMENT_COMPARISON_BEHIND")
+            set -xe
+            # do something
+            ;;
+            
+         "$ARGUMENT_STEP_BEFORE_DATA_MIGRATION-$ARGUMENT_COMPARISON_IDENTICAL")
+            set -xe
+            # do something
+            ;;
+
+        "$ARGUMENT_STEP_AFTER_DATA_MIGRATION-$ARGUMENT_COMPARISON_IDENTICAL")
+            set -xe
+            # do something
+            # run this manually.
+            ./mdoq/migrate.sh
+            ;;            
+            
+        "$ARGUMENT_STEP_FINAL-$ARGUMENT_COMPARISON_AHEAD")
+            set -xe
+            # do something
+            ;;
+        "$ARGUMENT_STEP_FINAL-$ARGUMENT_COMPARISON_IDENTICAL")
+            set -xe
+            ;;
+        "$ARGUMENT_STEP_FINAL-$ARGUMENT_COMPARISON_BEHIND")
+            set -xe
+            # do something
+            ;;
+        *)
+            echo "input not recognized: $INPUT"
+            exit 1
+esac
