@@ -119,13 +119,13 @@
         </step>
     </steps>
       <source>
-        <database host="94.23.209.151" name="magento" user="root" password="f3euiobg8i9Ff3f39g"/>
+        <database host="94.23.209.151" port="6033" name="magento" user="root" password="f3euiobg8i9Ff3f39g"/>
     </source>
     <destination>
         <database host="11157-mysql" name="magento" user="magento" password="zero1zero1"/>
     </destination>
     <options>
-        <map_file>etc/opensource-to-opensource/1.9.4.1/map.xml.dist</map_file>
+        <map_file>etc/opensource-to-opensource/1.9.4.5/map.xml.dist</map_file>
         <eav_map_file>etc/opensource-to-opensource/map-eav.xml.dist</eav_map_file>
         <eav_document_groups_file>etc/opensource-to-opensource/eav-document-groups.xml.dist</eav_document_groups_file>
         <eav_attribute_groups_file>etc/opensource-to-opensource/eav-attribute-groups.xml.dist</eav_attribute_groups_file>
@@ -139,7 +139,7 @@
         <order_grids_document_groups_file>etc/opensource-to-opensource/order-grids-document-groups.xml.dist</order_grids_document_groups_file>
         <map_document_groups>etc/opensource-to-opensource/map-document-groups.xml.dist</map_document_groups>
         <class_map>etc/opensource-to-opensource/class-map.xml.dist</class_map>
-        <tier_price_map_file>etc/opensource-to-opensource/1.9.4.1/map-tier-price.xml.dist</tier_price_map_file>
+        <tier_price_map_file>etc/opensource-to-opensource/1.9.4.5/map-tier-price.xml.dist</tier_price_map_file>
         <stores_map_file>etc/opensource-to-opensource/map-stores.xml.dist</stores_map_file>
         <!--
         In case bulk_size=0 it will be auto-detected for every document.
@@ -158,7 +158,7 @@
         <progress_bar_format>%percent%% [%bar%] Remaining Time: %remaining%</progress_bar_format>
         <upgrade_customer_password_hash>1</upgrade_customer_password_hash>
         <edition_migrate>opensource-to-opensource</edition_migrate>
-        <edition_number>1.9.4.1</edition_number>
+        <edition_number>1.9.4.5</edition_number>
         <init_statements_source>SET NAMES utf8;</init_statements_source>
         <init_statements_destination>SET NAMES utf8;</init_statements_destination>
         <crypt_key>4d58f8c93e8573b07727caee88a0c6a3</crypt_key>
