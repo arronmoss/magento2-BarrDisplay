@@ -4,8 +4,11 @@ m2db_user=$(php -r '$env = include "./app/etc/env.php"; echo $env["db"]["connect
 m2db_password=$(php -r '$env = include "./app/etc/env.php"; echo $env["db"]["connection"]["default"]["password"].PHP_EOL;');
 m2db_database=$(php -r '$env = include "./app/etc/env.php"; echo $env["db"]["connection"]["default"]["dbname"].PHP_EOL;');
 
-cp app/etc/config.php.pra_dupe app/etc/config.php
-bin/magento app:config:import
+php bin/magento migrate:settings -r -a -vv -- ./data-migration-config.xml
+php bin/magento migrate:data -r -a -vv -- ./data-migration-config.xml
+
+#cp app/etc/config.php.pra_dupe app/etc/config.php
+#3bin/magento app:config:import
 
 THEME=$(echo "USE ${m2db_database}; select code as '' FROM theme WHERE code='z1/rg';" | mysql -sN -h ${m2db_host} -u ${m2db_user} -p${m2db_password};)
 echo "USE ${m2db_database}; INSERT INTO core_config_data (scope,scope_id,path,value) VALUES ('default',0,'design/theme/theme_id','${THEME}');" | mysql -h ${m2db_host} -u ${m2db_user} -p${m2db_password};
