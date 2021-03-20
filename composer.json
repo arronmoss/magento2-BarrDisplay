@@ -16,14 +16,7 @@
         "ebizmarts/sagepaysuite": "^1.4",
         "magento/composer-root-update-plugin": "~1.1",
         "magento/data-migration-tool": "2.4.2",
-        "magento/product-community-edition": "2.4.2",
-        "magepal/magento2-cataloglazyload": "^1.7",
-        "mageplaza/module-smtp": "^4.3",
-        "mailchimp/mc-magento2": "*",
-        "markshust/magento2-module-disabletwofactorauth": "^1.1",
-        "mdoq/module-connector": "^1.4",
-        "shipperhq/module-shipper": "^20.40",
-        "zero1limited/magento2-patches": "^1.0"
+        "magento/product-community-edition": "2.4.2"
     },
     "autoload": {
         "exclude-from-classmap": [
