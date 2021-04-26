@@ -1,0 +1,67 @@
+/* All */
+.page-header {
+	background: #fff;
+}
+.top-container {
+	background: #fff;
+}
+.top-container .ksps {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 1280px;
+    padding-left: 20px;
+    padding-right: 20px;
+    width: auto;
+    text-align: center;
+}
+.top-container .ksps ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+.top-container .ksps ul li {
+	display: inline-block;
+}
+.top-container .ksps ul li a {
+    display: block;
+    position: relative;
+    padding: 8px 30px;
+}
+.top-container .ksps ul li a .material-icons {
+    position: absolute;
+    top: 6px;
+    left: 0;
+    color: #7b7b7b;
+}
+.page-main {
+	background: #fff;
+	padding-top: 15px;
+	padding-bottom: 15px;
+}
+.footer.content {
+	border: 0;
+}
+.page-footer {
+	background: #231f20;
+	color: #fff;
+}
+.copyright {
+	background: black;
+	color: #fff;
+	text-align: center;
+	padding: 5px;
+}
+/* Mobile Only */
+@media only screen and (max-width: 768px) {
+
+}
+/* Desktop Only */
+@media only screen and (min-width: 768px) {
+	.nav-sections {
+		background: #9f1f1c;
+		min-height: 10px;
+	}
+	.top-container {
+		max-width: 100%;
+	}
+}

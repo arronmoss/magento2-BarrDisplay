@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
+        <link rel="apple-touch-icon" sizes="180x180" src_type="url" src="/apple-touch-icon.png"/>
+        <meta name="msapplication-TileColor" content="#9f1f1c" />
+        <meta name="theme-color" content="#9f1f1c"/>
+        <link rel="preconnect" src_type="url" src="https://fonts.gstatic.com"/>
+        <css src="//fonts.googleapis.com/css2?family=Montserrat:wght@400;700&amp;display=swap" src_type="url" />
+        <css src="//fonts.googleapis.com/icon?family=Material+Icons" src_type="url" />
+        <css src="css/dev.css" media="all and (min-width: 1px)" />
+    </head>
+    <body>
+        <referenceContainer name="footer-container">
+        	<!--<block class="Magento\Framework\View\Element\Template" name="misc.scripts" template="Magento_Theme::misc-scripts.phtml"/>-->
+        </referenceContainer>
+    </body>
+</page>

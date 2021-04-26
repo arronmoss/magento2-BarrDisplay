@@ -1,0 +1,110 @@
+@import '_bootstrap.less';
+@import '_owl.less';
+/*@screen__xxs: 320px;
+@screen__xs: 480px;
+@screen__s: 640px;
+@screen__m: 768px;
+@screen__l: 1024px;
+@screen__xl: 1440px;*/
+// "Montserrat" sitewide - Google Fonts delivery in Magento_Theme/layout/default_head_blocks.xml
+@font-family__sans-serif: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+@mont: "Montserrat", @font-family__sans-serif;
+@font-family__base: @mont;
+@primary-color: #333;
+@red: #9f1f1c;
+@brightred: red;
+@darkgrey: #231f20;
+@button-primary__background: @red;
+@button-primary__border: 1px solid @red;
+button,
+a.action.primary,
+.cart.table-wrapper .actions-toolbar > .action,
+.action-gift {border-radius:2px}
+.action.primary.tocart {
+	background: @brightred;
+	border-color: @brightred;
+	&:hover {
+		background: @brightred;
+		border-color: @brightred;
+	}
+}
+// Mixins
+.icon {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-size: 35px;
+  line-height: 33px;
+  color: #c2c2c2;
+  content: '';
+  font-family: 'icons-blank-theme';
+  vertical-align: middle;
+  display: inline-block;
+  font-weight: normal;
+  overflow: hidden;
+  speak: none;
+  text-align: center;
+}
+.icon-luma {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-size: 16px;
+  line-height: 16px;
+  color: #c2c2c2;
+  content: '';
+  font-family: 'luma-icons';
+  margin: 0;
+  vertical-align: top;
+  display: inline-block;
+  font-weight: normal;
+  overflow: hidden;
+  speak: none;
+  text-align: center;
+}
+.clearer {
+  content:'';
+  display:table;
+  clear:both
+}
+.list-reset {
+  list-style:none;
+  margin:0;
+  padding:0
+}
+.hide {
+  border: 0;
+  clip: rect(0, 0, 0, 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}
+.unhide {
+  clip: auto;
+  height: auto;
+  position: static;
+  width: auto
+}
+.centered {
+  margin-left: auto;
+  margin-right: auto;
+  width: 1200px;
+  box-sizing: border-box;
+  max-width: 1200px;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+body {
+	font-family: @mont;
+	font-size:16px;
+	line-height:1.6;
+	background:#f6f6f6;
+}
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {font-weight: 400}
+a,
+a:visited,
+.alink,
+.alink:visited {
+  color: @red;
+}
