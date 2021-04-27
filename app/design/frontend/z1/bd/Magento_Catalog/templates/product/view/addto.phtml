@@ -8,8 +8,5 @@
 ?>
 <div class="product-addto-links" data-role="add-to-links">
     <?= $block->getChildHtml() ?>
-    <a href="#" data-role="add-to-links" class="action print-page">
-		<span class="material-icons">print</span>
-		<span><?= $block->escapeHtml(__('Print Page')) ?></span>
-	</a>
+    <a href="#" onclick="window.print();" data-role="add-to-links" class="action print-page"><span>Print Page</span></a>
 </div>

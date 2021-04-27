@@ -203,6 +203,49 @@
 .product-social-links {
 	text-align: left;
 }
+.product-info-main .action.towishlist,
+.product-options-bottom .action.towishlist,
+.product-info-main .action.towishlist:hover,
+.product-options-bottom .action.towishlist:hover {
+	position: relative;
+    background: transparent;
+    padding: 0;
+    border: 0;
+    font-size: inherit;
+    font-weight: 400;
+    vertical-align: top;
+}
+.product-info-main .action.print-page span,
+.product-info-main .action.towishlist span {
+	display: none;
+}
+.product-info-main .action.print-page:before,
+.product-info-main .action.towishlist:before {
+	color: #9f1f1c;
+	font-family: 'Material Icons';
+	content: '\e87e';
+	font-weight: normal;
+	font-style: normal;
+	font-size: 30px;  /* Preferred icon size */
+	display: inline-block;
+	line-height: 1;
+	text-transform: none;
+	letter-spacing: normal;
+	word-wrap: normal;
+	white-space: nowrap;
+	direction: ltr;
+	-webkit-font-smoothing: antialiased;
+	text-rendering: optimizeLegibility;
+	-moz-osx-font-smoothing: grayscale;
+	font-feature-settings: 'liga';
+}
+.product-info-main .action.print-page:before {
+	content: '\e8ad';
+}
+.product-info-main .action.towishlist:hover:before,
+.product-info-main .action.print-page:hover:before {
+	color: #333;
+}
 /* eof PDP */
 /* Mobile Only */
 @media only screen and (max-width: 640px) {
