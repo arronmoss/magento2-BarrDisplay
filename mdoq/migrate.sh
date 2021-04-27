@@ -34,7 +34,7 @@ php bin/magento config:set --scope=websites --scope-code=new web/unsecure/base_m
 #echo "USE ${m2db_database}; INSERT INTO core_config_data (scope,scope_id,path,value) VALUES ('default',0,'design/theme/theme_id','${THEME}');" | mysql -h ${m2d$
 
 bin/magento config:set system/full_page_cache/caching_application 2
-bin/magento config:set --lock-config catalog/search/engine elasticsearch7
+bin/magento config:set catalog/search/engine elasticsearch7
 
 bin/magento config:set mdoq_connector/connector/enable 1
 bin/magento config:set mdoq_connector/connector/admin_access_enable 0
@@ -69,7 +69,3 @@ bin/magento config:set catalog/navigation/max_depth 8
 bin/magento cache:enable && php bin/magento cache:flush
 bin/magento deploy:mode:set production
 bin/magento indexer:reindex
-
-cd ~/htdocs/pub;
-mv media mediaBK;
-ln -s ../../media media
