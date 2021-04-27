@@ -8,8 +8,8 @@
 @screen__xl: 1440px;*/
 // "Montserrat" sitewide - Google Fonts delivery in Magento_Theme/layout/default_head_blocks.xml
 @font-family__sans-serif: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-@mont: "Montserrat", @font-family__sans-serif;
-@font-family__base: @mont;
+@poppins: "Poppins", @font-family__sans-serif;
+@font-family__base: @poppins;
 @primary-color: #333;
 @red: #9f1f1c;
 @brightred: red;
@@ -20,7 +20,16 @@ button,
 a.action.primary,
 .cart.table-wrapper .actions-toolbar > .action,
 .action-gift {border-radius:2px}
-.action.primary.tocart {
+.action.primary {
+	text-transform: uppercase;
+}
+.action.primary:hover,
+.action.primary:active,
+.action.primary:focus {
+	background: lighten(@red,10%);
+	border-color: lighten(@red,10%);
+}
+.product-info-main .action.primary.tocart {
 	background: @brightred;
 	border-color: @brightred;
 	&:hover {
@@ -96,8 +105,8 @@ a.action.primary,
   padding-right: 20px;
 }
 body {
-	font-family: @mont;
-	font-size:16px;
+	font-family: @poppins;
+	font-size:1.5rem;
 	line-height:1.6;
 	background:#f6f6f6;
 }
@@ -107,4 +116,8 @@ a:visited,
 .alink,
 .alink:visited {
   color: @red;
+}
+a:hover,
+.alink:hover {
+	color: lighten(@red,20%);
 }

@@ -6,12 +6,8 @@
  */
 -->
 <page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
-    <head>
-        <!--<link src="js/jq-custom.js"/>-->
-    </head>
     <body>
-        <referenceBlock name="store.links" remove="true"/>
-        
+        <move element="header.panel" destination="header-wrapper" after="logo" />
         <referenceContainer name="header.panel">
             <block class="Magento\Framework\View\Element\Template" name="header_tel" template="Magento_Theme::header-tel.phtml" />
         </referenceContainer>
@@ -19,8 +15,8 @@
         <referenceContainer name="header-wrapper">
             <block class="Magento\Theme\Block\Html\Header\Logo" name="logo">
                 <arguments>
-                    <argument name="logo_img_width" xsi:type="number">300</argument>
-                    <argument name="logo_img_height" xsi:type="number">85</argument>
+                    <argument name="logo_img_width" xsi:type="number">282</argument>
+                    <argument name="logo_img_height" xsi:type="number">78</argument>
                 </arguments>
             </block>
         </referenceContainer>
@@ -44,7 +40,9 @@
             <referenceBlock name="catalog.compare.link" remove="true"/>
             <referenceBlock name="authorization-link" remove="true"/>
             <!--<referenceBlock name="my-account-link" remove="true" />-->
+            <!-- this is just the welcome message, confusing block name -->
             <referenceBlock name="header" remove="true"/>
+            <!-- Custom Links -->
             <block class="Magento\Framework\View\Element\Html\Link" name="blog-link">
                 <arguments>
                     <argument name="label" xsi:type="string" translate="true">Blog</argument>
@@ -63,7 +61,7 @@
         
         <!-- Blocks added to the menu -->
         <referenceBlock name="store.menu">
-            <block class="Magento\Framework\View\Element\Template" name="after.nav" template="Magento_Theme::nav-after.phtml" after="catalog.topnav"/>
+            <!--<block class="Magento\Framework\View\Element\Template" name="after.nav" template="Magento_Theme::nav-after.phtml" after="catalog.topnav"/>-->
         </referenceBlock>
 
         <referenceContainer name="footer">
