@@ -21,6 +21,10 @@
             </block>
         </referenceContainer>
         
+        <referenceContainer name="page.top">
+    		<block class="Magento\Framework\View\Element\Template" name="topnavtest" template="Magento_Theme::nav-test.phtml" ttl="3600" before="-"/>
+		</referenceContainer>
+        
         <referenceContainer name="top.container">
         	<!-- Header KSPs -->
 			<container name="header.usps.wrapper" htmlClass="ksps" htmlTag="div" before="-">
@@ -81,7 +85,7 @@
         
         <move element="copyright" destination="before.body.end" before="-"/>
         <referenceContainer name="before.body.end">
-        	<block class="Magento\Framework\View\Element\Template" name="nav.blocks" template="Magento_Theme::nav-blocks.phtml"/>
+        	<!--<block class="Magento\Framework\View\Element\Template" name="nav.blocks" template="Magento_Theme::nav-blocks.phtml"/>-->
         </referenceContainer>	
     </body>
 </page>
