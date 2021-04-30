@@ -45,7 +45,7 @@ $_helper = $block->getData('outputHelper');
     $pos = $block->getPositioned();
     ?>
     <div class="products wrapper <?= /* @noEscape */ $viewMode ?> products-<?= /* @noEscape */ $viewMode ?>">
-        <ol class="products list items product-items">
+        <ol class="products list items product-items<?php if($_productCollection->count()<4):?> below-4<?php endif;?>">
             <?php /** @var $_product \Magento\Catalog\Model\Product */ ?>
             <?php foreach ($_productCollection as $_product): ?>
             <li class="item product product-item">

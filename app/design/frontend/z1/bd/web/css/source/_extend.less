@@ -1,5 +1,4 @@
 @import '_bootstrap.less';
-// @import '_owl.less';
 /*@screen__xxs: 320px;
 @screen__xs: 480px;
 @screen__s: 640px;
@@ -249,7 +248,7 @@ a:hover,
 .product-options-bottom .price-box .price-wrapper .price {font-size: 2.6rem}
 .product-item .price-box .price,
 .minimal-price-link .price-wrapper {color: red;font-weight: 400;}
-.product-item .minimal-price-link .price-label {color: @red}
+.product-item .minimal-price-link .price-label {color: @red;display:inline;}
 /* PLP */
 .catalog-category-view.page-layout-2columns-left {
 	.category-view .category-image,
@@ -273,6 +272,12 @@ a:hover,
 	    grid-template-columns: repeat(auto-fit,minmax(200px,1fr));
 	    grid-auto-flow: row;
 	    grid-gap: 20px;
+	    &.below-4 {
+			grid-template-columns: 1fr 1fr 1fr 1fr;
+			@media only screen and (max-width:640px) {
+				grid-template-columns: 49% 49%;
+			}
+		}
 	    .product-item {
 	    	border: 1px solid #ddd;
 			padding: 15px;
@@ -284,6 +289,7 @@ a:hover,
 			}
 			.price-box .minimal-price-link {
 				display: inline-block;
+				margin: 0 0 0 3px;
 			}
 			.product-item-actions {
 				margin: 0;
