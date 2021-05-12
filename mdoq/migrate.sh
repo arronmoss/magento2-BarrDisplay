@@ -76,7 +76,7 @@ bin/magento config:set catalog/navigation/max_depth 2
 # https://zero1.teamwork.com/#/tasks/24020245 Google Analytics
 # Not required, pulling value from M1
 
-
+bin/magento config:set admin/security/admin_account_sharing 1
 
 
 bin/magento cache:enable && php bin/magento cache:flush
