@@ -18,7 +18,7 @@
         "magento/data-migration-tool": "2.4.2",
         "magento/product-community-edition": "2.4.2",
         "magepal/magento2-cataloglazyload": "^1.7",
-        "mageplaza/module-smtp": "^4.3",
+        "mageplaza/module-smtp": "4.3.2",
         "mailchimp/mc-magento2": "*",
         "markshust/magento2-module-disabletwofactorauth": "^1.1",
         "mdoq/module-connector": "^1.4",
