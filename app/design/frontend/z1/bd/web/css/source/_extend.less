@@ -387,6 +387,7 @@ a:hover,
 /* Homepage */
 #home-slider {
 	/* temporary */
+	display: none;
 	width: 897px;
 	height: 364px;
 	overflow: hidden;
@@ -400,6 +401,25 @@ a:hover,
     grid-template-rows: 1fr;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-template-columns: repeat(auto-fit,minmax(200px,1fr));
+    grid-auto-flow: row;
+    grid-gap: 20px;
+    .product-info {
+		margin: 0;
+	    padding: 10px;
+	    background: #888;
+	    color: #f8f8f8;
+	    font-size: 16px;
+	    text-align: center;
+	}
+}
+.products-grid.products-grid--max-4-col{
+	list-style: none;
+	padding: 0;
+	margin: 0;
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
     grid-auto-flow: row;
     grid-gap: 20px;
     .product-info {
@@ -724,5 +744,30 @@ a:hover,
 			    background: url(../images/logo_footer.png) top right no-repeat transparent;
 			}
 		}
+	}
+}
+/* Homepage, jazz up boxes a bit now that main banner is removed */
+.cms-index-index .products-grid.subcategory-list > li {
+	transition: all ease-in-out 100ms;
+	&:hover {
+		transform: scale(1.05);
+		box-shadow: 0px 2px 5px rgba(0,0,0,0.1);
+	}
+	img {
+		margin: -25px auto 0;
+		z-index: 1;
+		display: block;
+		position: relative;
+	}
+	.product-info {
+		z-index: 2;
+		background: rgba(160,0,0,0.75);
+		position: relative;
+	}
+}
+/* The 4 col one has the title below the image, tweaks */
+.cms-index-index .products-grid.products-grid--max-4-col.subcategory-list > li {
+	img {
+		margin: 0 auto -25px;
 	}
 }
