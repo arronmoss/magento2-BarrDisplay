@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    
+    <!-- override quote validation -->
+    <type name="Magento\Quote\Model\Quote">
+        <plugin name="LoworderfeeQuote" type="Mango\Loworderfee\Model\Plugin\Quote" sortOrder="1000" disabled="false" />
+    </type>
+    <type name="Magento\Quote\Model\Quote\Address">
+        <plugin name="LoworderfeeAddress" type="Mango\Loworderfee\Model\Plugin\Quote\Address" sortOrder="1000" disabled="false" />
+    </type>
+    <!-- add totals to order -->
+    <type name="Magento\Sales\Model\Order">
+        <plugin name="LoworderfeeOrder" type="Mango\Loworderfee\Model\Plugin\Sales\Order" sortOrder="1000" disabled="false" />
+    </type>
+    <!-- save additional data -->
+    <type name="Magento\Quote\Model\Quote\TotalsCollector">
+        <plugin name="LoworderfeeTotals" type="Mango\Loworderfee\Model\Plugin\Quote\TotalsCollector" sortOrder="1000" disabled="false" />
+    </type>
+    
+    <!-- paypal add total -->
+    
+    <type name="Magento\Paypal\Model\Cart">
+        <plugin name="LoworderfeePaypal" type="Mango\Loworderfee\Model\Plugin\Paypal\Cart" sortOrder="1000" disabled="false" />
+    </type>
+    
+    <!--type name="Magento\Payment\Model\Cart\SalesModel\Quote">
+        <plugin name="LoworderfeeSalesModel" type="Mango\Loworderfee\Model\Plugin\Payment\Cart\SalesModel\Quote" sortOrder="1000" disabled="false" />
+    </type-->
+    
+    
+    
+</config>

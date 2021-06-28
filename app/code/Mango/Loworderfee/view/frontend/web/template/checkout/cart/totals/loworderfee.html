@@ -1,0 +1,16 @@
+<!-- ko if: isDisplayed() -->
+<tr class="totals loworderfee excl"
+    data-bind="mageInit: {'toggleAdvanced':{'selectorsToggleClass': 'shown', 'baseToggleClass': 'expanded', 'toggleContainers': '.loworderfee-description'}}"
+    >
+    <th class="mark" colspan="1" scope="row">
+        <span data-bind="text: title" class="loworderfee-title"></span></th>
+    <td class="amount">
+       <span class="price" data-bind="text: getValue()"></span>
+    </td>
+</tr>
+
+<tr class="loworderfee-description">
+    <td colspan="2" data-bind="text: description"></td>
+</tr>
+
+<!-- /ko -->

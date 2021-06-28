@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="1column" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <update handle="checkout_cart_item_renderers"/>
+    <head>
+        <css src="Mango_Loworderfee::css/loworderfee.css"/>
+    </head>
+    <body>
+        
+        <referenceContainer name="page.messages">
+            <referenceBlock name="checkout.cart.loworderfeemessages" remove="true"/>
+            <block class="Mango\Loworderfee\Block\Cart\ValidationMessages" name="checkout.cart.loworderfeemessages"/>
+        </referenceContainer>
+        <referenceBlock name="checkout.cart.totals">
+            <arguments>
+                <argument name="jsLayout" xsi:type="array">
+                    <item name="components" xsi:type="array">
+                        <item name="block-totals" xsi:type="array">
+                            <item name="children" xsi:type="array">
+
+
+                                <item name="loworderfee" xsi:type="array">
+                                    <item name="component"  xsi:type="string">Mango_Loworderfee/js/view/checkout/cart/totals/loworderfee</item>
+                                    <item name="sortOrder" xsi:type="string">30</item>
+                                    <item name="config" xsi:type="array">
+                                        <item name="template" xsi:type="string">Mango_Loworderfee/checkout/cart/totals/loworderfee</item>
+                                        <item name="description" xsi:type="helper" helper="\Mango\Loworderfee\Helper\Configuration::getDescription"/>
+                                        <item name="title" xsi:type="helper" helper="\Mango\Loworderfee\Helper\Configuration::getTitle"/>
+                                    </item>
+                                </item>
+
+                            </item>
+                        </item>
+                    </item>
+                </argument>
+            </arguments>
+        </referenceBlock>
+    </body>
+</page>

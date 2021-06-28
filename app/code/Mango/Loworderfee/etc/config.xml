@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
+    <default>
+        <sales>
+            <totals_sort>
+                <loworderfee>25</loworderfee>
+            </totals_sort>
+            <minimum_order>
+                <low_order_fee_title>Minimum Order Fee</low_order_fee_title>
+                <low_order_fee_method>fixed</low_order_fee_method>
+                <low_order_fee_ranges>0</low_order_fee_ranges>
+                <low_order_fee_customer_group_enable>0</low_order_fee_customer_group_enable>
+                <low_order_fee_reference>BaseSubtotalWithDiscount</low_order_fee_reference>
+            </minimum_order>
+        </sales>
+    </default>
+</config>
