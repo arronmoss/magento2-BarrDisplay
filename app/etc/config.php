@@ -359,6 +359,16 @@ return [
             'catalog' => [
                 'navigation' => [
                     'max_depth' => '2'
+                ],
+                'search' => [
+                    'engine' => 'elasticsuite'
+                ]
+            ],
+            'carriers' => [
+                'shipper' => [
+                    'api_key' => '0:3:TswdORKB0Nz/xlTNmnk028ymkvDtzH0RnO7Ik6b5Osv5O8iybverlXsoYZldPUEunZYM0ugaWmSmQjhDs1LuoocHyEGeeY3l7wL7tend5+LzBF4mV1uLcsXUG3jOMCOnZYe9lJkS8MAB7GDvctuIAQ==',
+                    'password' => '0:3:tfqXrS/4A61LHiw8644oua8e6buz4F91hNhvfxC7MlMBLe6kpcjUFJWz1LwyHIbQg1q6qOtbhjYl2GkufVi09gradAmHI7K1iwtzyMEsbpEoZCmKYYb1OyVlp+lZ5xEwNB1aGBgGCcqhLoD9f+lOsn4po3CGFW7K/KzaTfPuq0JOsUyt2stXHA==',
+                    'environment_scope' => 'TEST'
                 ]
             ]
         ]
