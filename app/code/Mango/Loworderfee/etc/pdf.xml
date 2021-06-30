@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © 2016 Mangoextensions. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Sales:etc/pdf_file.xsd">
+    <totals>
+        <total name="loworderfee">
+            <title translate="true">Low Order Fee</title>
+            <source_field>loworderfee_amount</source_field>
+            <model>Mango\Loworderfee\Model\Sales\Pdf\Loworderfee</model>
+            <font_size>7</font_size>
+            <display_zero>false</display_zero>
+            <sort_order>295</sort_order>
+        </total>
+    </totals>
+</config>
