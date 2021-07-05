@@ -327,6 +327,7 @@ return [
         'MagePal_CatalogLazyLoad' => 1,
         'Mageplaza_Core' => 1,
         'Mageplaza_Smtp' => 1,
+        'Mango_Loworderfee' => 1,
         'MarkShust_DisableTwoFactorAuth' => 1,
         'Mdoq_Connector' => 1,
         'PayPal_Braintree' => 1,
@@ -359,6 +360,19 @@ return [
                 ],
                 'instore' => [
                     'active' => '1'
+                ]
+            ],
+            'sales' => [
+                'minimum_order' => [
+                    'active' => '1',
+                    'amount' => '25',
+                    'low_order_fee_active' => '1',
+                    'low_order_fee' => '5',
+                    'low_order_fee_method' => 'fixed',
+                    'low_order_fee_customer_group_enable' => '0',
+                    'low_order_fee_reference' => 'BaseSubtotalWithDiscount',
+                    'low_order_fee_tax_class' => '0',
+                    'low_order_fee_tax_includes_class' => '0'
                 ]
             ]
         ]
