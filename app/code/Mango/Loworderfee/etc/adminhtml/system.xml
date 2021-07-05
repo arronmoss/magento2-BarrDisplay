@@ -1,0 +1,207 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../Config/etc/system_file.xsd">
+    <system>
+        <section id="sales">
+            
+            <group id="totals_sort">
+                <field id="subtotal" sortOrder="1"/>
+                <field id="discount" sortOrder="2"/>
+                <field id="loworderfee" translate="label" type="text" sortOrder="3" showInDefault="1" showInWebsite="1" showInStore="0" canRestore="1">
+                    <label>Low Order Fee</label>
+                </field>
+                <field id="shipping" sortOrder="4"/>
+                <field id="tax" sortOrder="10"/>
+                <field id="grand_total" sortOrder="20"/>
+            </group>
+            
+            <group id="minimum_order">
+                <label>Minimum Order Amount and Low Order Fee</label>
+                <!--comment><![CDATA[]]></comment-->
+                
+                
+                <field id="active" sortOrder="5">
+                        <comment><![CDATA[
+                            <div class="message message-notice notice">
+                                This will disable the checkout for users that do not meet the minimum amount.
+                                <br/>To <b>Enable Low Order Fee</b> you must set this option to "Yes" first.
+                            </div>
+                    ]]></comment>
+                </field>
+                <field id="amount" sortOrder="100"/>
+                <field id="tax_including" type="hidden">
+                    <comment><![CDATA[<style>#row_sales_minimum_order_tax_including{display:none;}</style>]]></comment>
+                </field>
+                
+                <field id="low_order_fee_active" translate="label" type="select" sortOrder="200" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>Enable Low Order Fee</label>
+                    <comment><![CDATA[<div class="message message-notice notice">
+                        This will disable the low minimum order alerts 
+                        and add a low order fee instead. 
+                        It will apply to multiple-address shipping if 
+                        <b>Validate Each Address Separately in Multi-address Checkout</b> 
+                        is set to yes</div>]]></comment>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <depends>
+                        <field id="active">1</field>
+                    </depends>
+                </field>
+
+                <field id="low_order_fee_ranges" translate="label" type="select" sortOrder="202" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>Enable Ranges</label>
+                    <comment><![CDATA[Low Order Fee Ranges: If enabled, 
+                        enter the Low Order Fee data in the text field using the following format: amount,type,loworderfee:<br/>
+                    For example:<br/>    
+                    28,fixed,6<br/>
+                    34,difference,0<br/>
+                    50,percentage,6<br/>
+                    <b>Important</b>: The last value should be equal to the minimum order amount.]]></comment>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <depends>
+                        <field id="low_order_fee_active">1</field>
+                        <field id="active">1</field>
+                    </depends>
+
+                </field>
+            
+                <field id="low_order_fee_ranges_data" translate="label" type="textarea" sortOrder="203" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>Ranges Configuration</label>
+                    <depends>
+                        <field id="active">1</field>
+                        <field id="low_order_fee_active">1</field>
+                        <field id="low_order_fee_ranges">1</field>
+                    </depends>
+                </field>
+
+                                                
+                                                                                                                                                
+                <field id="low_order_fee_method" translate="label" type="select" sortOrder="205" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>Low Order Fee Calculation</label>
+                    <comment><![CDATA[Low Order Fee Calculation: fixed, percentage or difference ( minimum order amount - subtotal ).]]></comment>
+                    <source_model>Mango\Loworderfee\Model\Config\Source\Method</source_model>
+                    <depends>
+                        <field id="active">1</field>
+                        <field id="low_order_fee_active">1</field>
+                        <field id="low_order_fee_ranges">0</field>
+                    </depends>
+                </field>
+
+                <field id="low_order_fee" translate="label" type="text" sortOrder="208" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>Low Order Fee</label>
+                    <comment><![CDATA[Enter Low Order Fee]]></comment>
+                    <depends>
+                        <field id="active">1</field>
+                        <field id="low_order_fee_active">1</field>
+                        <field id="low_order_fee_ranges">0</field>
+                    </depends>
+
+                </field>
+            
+                                    
+                <field id="low_order_fee_customer_group_enable" translate="label" type="select" sortOrder="210" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>Apply To Selected Customer Groups</label>
+                    <comment><![CDATA[This will enable the validation and low order fee for selected customer groups only]]></comment>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <depends>
+                        <field id="active">1</field>
+                        <field id="low_order_fee_active">1</field>
+                    </depends>
+                </field>
+                
+                <field id="low_order_fee_customer_group" translate="label" type="multiselect" sortOrder="215" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>Apply To Customer Groups</label>
+                    <source_model>Mango\Loworderfee\Model\Config\Source\Customer\Group\Multiselect</source_model>
+                    <depends>
+                        <field id="active">1</field>
+                        <field id="low_order_fee_active">1</field>
+                        <field id="low_order_fee_customer_group_enable">1</field>
+                    </depends>
+
+                </field>
+                
+                <field id="low_order_fee_shipping_method_disable" translate="label" type="select" sortOrder="220" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>Disable for Selected Shipping Methods</label>
+                    <comment><![CDATA[This will disable the validation and low order fee for selected shipping methods]]></comment>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <depends>
+                        <field id="active">1</field>
+                        <field id="low_order_fee_active">1</field>
+                    </depends>
+                </field> 
+            
+                <field id="low_order_fee_shipping_method" translate="label" type="multiselect" sortOrder="225" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>Select shipping methods</label>
+                    <comment><![CDATA[<b style='color:red;'>Notice:</b>&nbsp;Only enabled shipping methods appear in this list.]]></comment>
+                    <source_model>Mango\Loworderfee\Model\Config\Source\Shipping\Method\Multiselect</source_model>
+                    <depends>
+                        <field id="active">1</field>
+                        <field id="low_order_fee_active">1</field>
+                        <field id="low_order_fee_shipping_method_disable">1</field>
+                    </depends>
+                </field>
+                
+                
+                
+                
+                <field id="low_order_fee_reference" translate="label" type="select" sortOrder="235" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>Subtotal</label>
+                    <comment>Compare minimum order amount with...</comment>
+                    <source_model>Mango\Loworderfee\Model\Config\Source\Reference</source_model>
+                    <depends>
+                        <field id="active">1</field>
+                        <field id="low_order_fee_active">1</field>
+                    </depends>
+                </field>
+                
+                <field id="low_order_fee_tax_class" translate="label" type="select" sortOrder="240" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>Tax Class for Low Order Fee</label>
+                    <comment><![CDATA[This will disable the low minimum order alerts and add a low order fee instead. It will apply to multiple-address shipping if <b>Validate Each Address Separately in Multi-address Checkout</b> is set to yes]]></comment>
+                    <source_model>Mango\Loworderfee\Model\Config\Source\Taxclass</source_model>
+                    <depends>
+                        <field id="active">1</field>
+                        <field id="low_order_fee_active">1</field>
+                    </depends>
+
+                </field>
+                
+                <field id="low_order_fee_tax_includes_class" translate="label" type="select" sortOrder="245" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>Low Order Fee Includes Tax</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <comment>Whether low order fee amount includes tax.</comment>
+                    <depends>
+                        <field id="active">1</field>
+                        <field id="low_order_fee_active">1</field>
+                    </depends>
+
+                </field>
+            
+            
+                <field id="low_order_fee_title" translate="label" type="text" sortOrder="250" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>Title</label>
+                    <comment>To display next to the low order fee in the cart and checkout when applicable.</comment>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <depends>
+                        <field id="active">1</field>
+                        <field id="low_order_fee_active">1</field>
+                    </depends>
+                </field>
+                
+                <field id="low_order_fee_details" translate="label" type="textarea" sortOrder="255" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Details</label>
+                    <comment>To show an explanation of the fee in the cart and checkout totals block.</comment>
+                    <depends>
+                        <field id="active">1</field>
+                        <field id="low_order_fee_active">1</field>
+                    </depends>
+                </field>
+                
+                
+                <!-- default fields -->
+                <field id="description" sortOrder="300"/>
+                <field id="error_message" sortOrder="350"/>
+                <field id="multi_address" sortOrder="400"/>
+                <field id="multi_address_description" sortOrder="450"/>
+                <field id="multi_address_error_message" sortOrder="500"/>
+            </group>
+        </section>
+    </system>
+</config>

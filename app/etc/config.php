@@ -334,25 +334,12 @@ return [
         'ShipperHQ_Common' => 1,
         'ShipperHQ_Logger' => 1,
         'ShipperHQ_Shipper' => 1,
-        'Smile_ElasticsuiteAdminNotification' => 1,
-        'Smile_ElasticsuiteCore' => 1,
-        'Smile_ElasticsuiteCatalog' => 1,
-        'Smile_ElasticsuiteCatalogGraphQl' => 1,
-        'Smile_ElasticsuiteCatalogRule' => 1,
-        'Smile_ElasticsuiteCatalogOptimizer' => 1,
-        'Smile_ElasticsuiteTracker' => 1,
-        'Smile_ElasticsuiteThesaurus' => 1,
-        'Smile_ElasticsuiteSwatches' => 1,
-        'Smile_ElasticsuiteIndices' => 1,
-        'Smile_ElasticsuiteAnalytics' => 1,
-        'Smile_ElasticsuiteVirtualCategory' => 1,
         'Temando_ShippingRemover' => 1,
         'Vertex_Tax' => 1,
         'Vertex_AddressValidationApi' => 1,
         'Vertex_AddressValidation' => 1,
         'Yotpo_Yotpo' => 1,
-        'Zero1_Patches' => 1,
-        'Zero1_SubCategoryList' => 1
+        'Zero1_Patches' => 1
     ],
     'system' => [
         'default' => [
@@ -369,6 +356,9 @@ return [
                     'api_key' => '0:3:TswdORKB0Nz/xlTNmnk028ymkvDtzH0RnO7Ik6b5Osv5O8iybverlXsoYZldPUEunZYM0ugaWmSmQjhDs1LuoocHyEGeeY3l7wL7tend5+LzBF4mV1uLcsXUG3jOMCOnZYe9lJkS8MAB7GDvctuIAQ==',
                     'password' => '0:3:tfqXrS/4A61LHiw8644oua8e6buz4F91hNhvfxC7MlMBLe6kpcjUFJWz1LwyHIbQg1q6qOtbhjYl2GkufVi09gradAmHI7K1iwtzyMEsbpEoZCmKYYb1OyVlp+lZ5xEwNB1aGBgGCcqhLoD9f+lOsn4po3CGFW7K/KzaTfPuq0JOsUyt2stXHA==',
                     'environment_scope' => 'TEST'
+                ],
+                'instore' => [
+                    'active' => '1'
                 ]
             ]
         ]
