@@ -1,0 +1,59 @@
+<?xml version="1.0"?>
+<csp_whitelist xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Csp/etc/csp_whitelist.xsd">
+    <policies>
+        <policy id="script-src">
+            <values>
+                <value id="cloudflare" type="host">*.cloudflare.com</value>
+                <value id="twitter.com" type="host">*.twitter.com</value>
+                <value id="fontawesome" type="host">*.fontawesome.com</value>
+                <value id="liveperson" type="host">*.liveperson.net</value>
+                <value id="trustpilot" type="host">*.trustpilot.com</value>
+                <value id="googletagmanager" type="host">www.googletagmanager.com</value>
+                <value id="lpsnmedia" type="host">*.lpsnmedia.net</value>
+            </values>
+        </policy>
+
+        <policy id="frame-src">
+            <values>
+                <value id="trustpilot" type="host">widget.trustpilot.com</value>
+                <value id="lpsnmedia" type="host">lpcdn.lpsnmedia.net</value>
+            </values>
+        </policy>
+
+
+        <policy id="style-src">
+            <values>
+                <value id="cloudflare" type="host">*.cloudflare.com</value>
+                <value id="fontawesome" type="host">*.fontawesome.com</value>
+                <value id="maxcdn" type="host">*.bootstrapcdn.com</value>
+                <value id="googleapis" type="host">fonts.googleapis.com</value>
+            </values>
+        </policy>
+        <policy id="img-src">
+            <values>
+                <value id="cloudflare" type="host">*.cloudflare.com</value>
+                <value id="mdoq" type="host">*.mdoq.io</value>
+                <value id="ibottles" type="host">*.ibottles.co.uk</value>
+                <value id="google" type="host">*.google.com</value>
+                <value id="googleuk" type="host">*.google.co.uk</value>
+            </values>
+        </policy>
+        <policy id="connect-src">
+            <values>
+                <value id="cloudflare" type="host">*.cloudflare.com</value>
+                <value id="paypal" type="host">*.paypal.com</value>
+                <value id="doubleclick" type="host">stats.g.doubleclick.net</value>
+                <value id="google-analytics" type="host">*.google-analytics.com</value>
+            </values>
+        </policy>
+        <policy id="font-src">
+            <values>
+                <value id="cloudflare" type="host">*.cloudflare.com</value>
+                <value id="googleapis" type="host">fonts.googleapis.com</value>
+                <value id="gstatic" type="host">fonts.gstatic.com</value>
+                <value id="data" type="host">'self' data:</value>
+                <value id="data" type="host">'unsafe-inline' data:</value>
+            </values>
+        </policy>
+    </policies>
+</csp_whitelist>

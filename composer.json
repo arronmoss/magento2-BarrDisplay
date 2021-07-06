@@ -88,6 +88,11 @@
         }
     },
     "extra": {
-        "magento-force": "override"
+        "magento-force": "override",
+        "patches": {
+            "mailchimp/mc-magento2":{
+                "Either remote URL or hashable content is required to whitelist": "https://raw.githubusercontent.com/zero1limited/magento2-patches/eb137aaaf90ffa86add6566116d08723b1acfc26/patches/Ebizmarts_Mailchimp_mailchimpjs.patch"
+            }
+        }
     }
 }
