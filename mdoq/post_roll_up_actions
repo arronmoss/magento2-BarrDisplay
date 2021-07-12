@@ -18,6 +18,9 @@ m2db_host=$(php -r '$env = include "./app/etc/env.php"; echo $env["db"]["connect
 m2db_user=$(php -r '$env = include "./app/etc/env.php"; echo $env["db"]["connection"]["default"]["username"].PHP_EOL;');
 m2db_password=$(php -r '$env = include "./app/etc/env.php"; echo $env["db"]["connection"]["default"]["password"].PHP_EOL;');
 m2db_database=$(php -r '$env = include "./app/etc/env.php"; echo $env["db"]["connection"]["default"]["dbname"].PHP_EOL;');
+INSTANCE_ID=$(php -r '$env = include "./app/etc/env.php"; echo str_replace("-mysql", "", $env["db"]["connection"]["default"]["host"]);');
+LIVE_INSTANCE_ID="11157"
+echo "instance id: ${INSTANCE_ID}"
 
 case $INPUT in
         "$ARGUMENT_STEP_BEFORE_COMPOSER-$ARGUMENT_COMPARISON_AHEAD")
@@ -27,7 +30,9 @@ case $INPUT in
         "$ARGUMENT_STEP_BEFORE_COMPOSER-$ARGUMENT_COMPARISON_IDENTICAL")
             set -xe
             # do something
-            cp app/etc/config.php app/etc/config.php.pra_dupe
+            if [[ ${INSTANCE_ID} -eq ${LIVE_INSTANCE_ID} ]]; then
+                cp app/etc/config.php app/etc/config.php.pra_dupe-$(date +%s)
+            fi
             ;;
         "$ARGUMENT_STEP_BEFORE_COMPOSER-$ARGUMENT_COMPARISON_BEHIND")
             set -xe
@@ -76,6 +81,9 @@ case $INPUT in
         "$ARGUMENT_STEP_FINAL-$ARGUMENT_COMPARISON_IDENTICAL")
             set -xe
             #./mdoq/migrate.sh
+            if [[ ${INSTANCE_ID} -eq ${LIVE_INSTANCE_ID} ]]; then
+                cd ~/htdocs && ./mdoq/migrate.sh >> ./mdoq/migrate.log
+            fi
             ;;
         "$ARGUMENT_STEP_FINAL-$ARGUMENT_COMPARISON_BEHIND")
             set -xe

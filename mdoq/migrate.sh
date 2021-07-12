@@ -39,12 +39,13 @@ echo "USE ${m2db_database}; delete from core_config_data where path like 'cronta
 # https://zero1.teamwork.com/#/tasks/24380538
 echo "USE ${m2db_database}; DELETE FROM core_config_data WHERE value = 'shipperhq_shipper/carrier_shipper';" | mysql -h ${m2db_host} -u ${m2db_user} -p${m2db_password}
 
-
-
-
 # Remove M1 custom email templates
 echo "USE ${m2db_database}; delete from core_config_data where path = 'customer/create_account/email_template';" | mysql -h ${m2db_host} -u ${m2db_user} -p${m2db_password}
 
+
+# https://zero1.teamwork.com/#/tasks/24635208
+echo "update eav_attribute set backend_type = 'int', source_model = 'Magento\\Eav\\Model\\Entity\\Attribute\\Source\\Boolean' where entity_type_id = 2 and attribute_code = 'address_valid';" | mysql -h ${m2db_host} -u ${m2db_user} -p${m2db_password} ${m2db_database}
+echo "update core_config_data set path = 'design/head/includes_disabled' where config_id in (43, 1938);" | mysql -h ${m2db_host} -u ${m2db_user} -p${m2db_password} ${m2db_database}
 
 bin/magento config:set system/full_page_cache/caching_application 2
 bin/magento config:set catalog/search/engine elasticsearch7
