@@ -1,23 +1,36 @@
+#!/bin/bash -xe
+
+curl -X POST --data-urlencode "payload={\"channel\": \"#barrdisplay\", \"username\": \"webhookbot\", \"text\": \"Prod Instance starting Data Migration\", \"icon_emoji\": \":ghost:\"}" https://hooks.slack.com/services/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
+
 cd ~/htdocs;
 ### VVV Importanto
-php bin/magento cache:disable
+rm -rf var/di/* var/generation/* var/cache/* var/log/* var/page_cache/* generated/*
+php bin/magento cache:disable || true
+
+php bin/magento maintenance:enable || true
 
 m2db_host=$(php -r '$env = include "./app/etc/env.php"; echo $env["db"]["connection"]["default"]["host"].PHP_EOL;');
 m2db_user=$(php -r '$env = include "./app/etc/env.php"; echo $env["db"]["connection"]["default"]["username"].PHP_EOL;');
 m2db_password=$(php -r '$env = include "./app/etc/env.php"; echo $env["db"]["connection"]["default"]["password"].PHP_EOL;');
 m2db_database=$(php -r '$env = include "./app/etc/env.php"; echo $env["db"]["connection"]["default"]["dbname"].PHP_EOL;');
 
+m2db_connection_string="-sN -h ${m2db_host} -u ${m2db_user} -p${m2db_password} ${m2db_database}"
+
+echo "migrating settings..."
 php bin/magento migrate:settings -r -a -vv -- ./data-migration-config.xml
 # [2021-03-17 07:40:00][WARNING]: Duplicated code in store_group.code Record id 3
 # MANUAL STEUP Recreate NGINX Manually in MDOQ, otherise MDOQ still routes to store 1
+echo "settings migrated! :D"
 
+echo "migrating data..."
 php bin/magento migrate:data -r -a -vv -- ./data-migration-config.xml
+echo "data migrated! :D"
 
 php bin/magento config:set --scope=websites --scope-code=deepseateak web/unsecure/base_url https://m2.deepseateak.com/
 php bin/magento config:set --scope=websites --scope-code=deepseateak web/unsecure/base_link_url https://m2.deepseateak.com/
 php bin/magento config:set --scope=websites --scope-code=deepseateak web/unsecure/base_media_url https://m2.deepseateak.com/media/
 php bin/magento config:set --scope=websites --scope-code=deepseateak web/secure/base_url https://m2.deepseateak.com/
-php bin/magento config:set --scope=websites --scope-code=deepseateak web/secure/base_link_url hhttps://m2.deepseateak.com/
+php bin/magento config:set --scope=websites --scope-code=deepseateak web/secure/base_link_url https://m2.deepseateak.com/
 php bin/magento config:set --scope=websites --scope-code=deepseateak web/secure/base_media_url https://m2.deepseateak.com/media/
 
 php bin/magento config:set --scope=websites --scope-code=new web/secure/base_url https://new.barrdisplay.com/
@@ -34,18 +47,17 @@ php bin/magento config:set --scope=websites --scope-code=new web/unsecure/base_m
 #echo "USE ${m2db_database}; INSERT INTO core_config_data (scope,scope_id,path,value) VALUES ('default',0,'design/theme/theme_id','${THEME}');" | mysql -h ${m2d$
 
 # Bug with Cron Jobs
-echo "USE ${m2db_database}; delete from core_config_data where path like 'crontab/jobs%';" | mysql -h ${m2db_host} -u ${m2db_user} -p${m2db_password}
+echo "delete from core_config_data where path like 'crontab/jobs%';" | mysql ${m2db_connection_string}
 
 # https://zero1.teamwork.com/#/tasks/24380538
-echo "USE ${m2db_database}; DELETE FROM core_config_data WHERE value = 'shipperhq_shipper/carrier_shipper';" | mysql -h ${m2db_host} -u ${m2db_user} -p${m2db_password}
+echo "DELETE FROM core_config_data WHERE value = 'shipperhq_shipper/carrier_shipper';" | mysql ${m2db_connection_string}
 
 # Remove M1 custom email templates
-echo "USE ${m2db_database}; delete from core_config_data where path = 'customer/create_account/email_template';" | mysql -h ${m2db_host} -u ${m2db_user} -p${m2db_password}
-
+echo "delete from core_config_data where path = 'customer/create_account/email_template';" | mysql ${m2db_connection_string}
 
 # https://zero1.teamwork.com/#/tasks/24635208
-echo "update eav_attribute set backend_type = 'int', source_model = 'Magento\\Eav\\Model\\Entity\\Attribute\\Source\\Boolean' where entity_type_id = 2 and attribute_code = 'address_valid';" | mysql -h ${m2db_host} -u ${m2db_user} -p${m2db_password} ${m2db_database}
-echo "update core_config_data set path = 'design/head/includes_disabled' where config_id in (43, 1938);" | mysql -h ${m2db_host} -u ${m2db_user} -p${m2db_password} ${m2db_database}
+echo "update eav_attribute set backend_type = 'int', source_model = 'Magento\\Eav\\Model\\Entity\\Attribute\\Source\\Boolean' where entity_type_id = 2 and attribute_code = 'address_valid';" | mysql -h ${m2db_connection_string}
+echo "update core_config_data set path = 'design/head/includes_disabled' where config_id in (43, 1938);" | mysql ${m2db_connection_string}
 
 bin/magento config:set system/full_page_cache/caching_application 2
 bin/magento config:set catalog/search/engine elasticsearch7
@@ -85,7 +97,14 @@ bin/magento config:set catalog/navigation/max_depth 2
 
 bin/magento config:set admin/security/admin_account_sharing 1
 
+# turn off flats
+bin/magento config:set -- catalog/frontend/flat_catalog_category 0
+bin/magento config:set -- catalog/frontend/flat_catalog_product 0
+
 
 bin/magento cache:enable && php bin/magento cache:flush
 bin/magento deploy:mode:set production
 bin/magento indexer:reindex
+
+curl -X POST --data-urlencode "payload={\"channel\": \"#barrdisplay\", \"username\": \"webhookbot\", \"text\": \"Prod Instance Migration Completed\", \"icon_emoji\": \":partying_face:\"}" https://hooks.slack.com/services/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
+
