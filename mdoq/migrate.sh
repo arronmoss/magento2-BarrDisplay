@@ -9,8 +9,6 @@ echo "migration in progress" > mdoq/.migrate
 curl -X POST --data-urlencode "payload={\"channel\": \"#barrdisplay\", \"username\": \"webhookbot\", \"text\": \"Prod Instance starting Data Migration\", \"icon_emoji\": \":ghost:\"}" https://hooks.slack.com/services/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
 
 cd ~/htdocs;
-php bin/magento config:set -- cron/enabled 0
-sleep 10
 
 ### VVV Importanto
 # get rid of pesky files
@@ -119,7 +117,6 @@ bin/magento cache:enable && php bin/magento cache:flush
 bin/magento deploy:mode:set production
 bin/magento indexer:reindex
 bin/magento maintenance:disable
-php bin/magento config:set -- cron/enabled 1
 
 curl -X POST --data-urlencode "payload={\"channel\": \"#barrdisplay\", \"username\": \"webhookbot\", \"text\": \"Prod Instance Migration Completed\", \"icon_emoji\": \":partying_face:\"}" https://hooks.slack.com/services/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
 echo "migration complete" > mdoq/.migrate
