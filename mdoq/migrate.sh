@@ -57,6 +57,8 @@ php bin/magento config:set --scope=websites --scope-code=new web/unsecure/base_m
 
 #THEME=$(echo "USE ${m2db_database}; select code as '' FROM theme WHERE code='z1/rg';" | mysql -sN -h ${m2db_host} -u ${m2db_user} -p${m2db_password};)
 #echo "USE ${m2db_database}; INSERT INTO core_config_data (scope,scope_id,path,value) VALUES ('default',0,'design/theme/theme_id','${THEME}');" | mysql -h ${m2d$
+# Set theme
+echo "insert into core_config_data (scope, scope_id, path, value) values ('default', 0, 'design/theme/theme_id', (select theme_id from theme where code = 'z1/bd'));" | mysql ${m2db_connection_string}
 
 # Bug with Cron Jobs
 echo "delete from core_config_data where path like 'crontab/jobs%';" | mysql ${m2db_connection_string}
