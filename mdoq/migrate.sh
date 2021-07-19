@@ -120,6 +120,9 @@ bin/magento config:set admin/security/admin_account_sharing 1
 bin/magento config:set -- catalog/frontend/flat_catalog_category 0
 bin/magento config:set -- catalog/frontend/flat_catalog_product 0
 
+# https://zero1.teamwork.com/#/tasks/24635208
+php bin/magento config:set sales/totals_sort/loworderfee 35
+
 bin/magento cache:enable && php bin/magento cache:flush
 bin/magento deploy:mode:set production
 bin/magento indexer:reindex
