@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "aa22a770020183ebb0ffd32741835e30",
+    "content-hash": "28c9a5afcf6258810233c7b1c381f057",
     "packages": [
         {
             "name": "2tvenom/cborencode",
@@ -2100,6 +2100,38 @@
             "license": [
                 "Apache-2.0"
             ],
+            "authors": [
+                {
+                    "name": "Joe Constant",
+                    "email": "joe.constant@klarna.com",
+                    "role": "Developer"
+                },
+                {
+                    "name": "Dario Kassler",
+                    "email": "dario.kassler@klarna.com",
+                    "role": "Developer"
+                },
+                {
+                    "name": "Kenny Gilles",
+                    "email": "kenny.gilles@klarna.com",
+                    "role": "Developer"
+                },
+                {
+                    "name": "Markus Simon",
+                    "email": "markus.simon2@klarna.com",
+                    "role": "Developer"
+                },
+                {
+                    "name": "Fei Chen",
+                    "email": "fei.chen@klarna.com",
+                    "role": "Developer"
+                },
+                {
+                    "name": "Jason Grim",
+                    "email": "jason.grim@klarna.com",
+                    "role": "Developer"
+                }
+            ],
             "description": "Klarna Core Magento 2 Extension"
         },
         {
@@ -2137,6 +2169,38 @@
             "license": [
                 "Apache-2.0"
             ],
+            "authors": [
+                {
+                    "name": "Joe Constant",
+                    "email": "joe.constant@klarna.com",
+                    "role": "Developer"
+                },
+                {
+                    "name": "Dario Kassler",
+                    "email": "dario.kassler@klarna.com",
+                    "role": "Developer"
+                },
+                {
+                    "name": "Kenny Gilles",
+                    "email": "kenny.gilles@klarna.com",
+                    "role": "Developer"
+                },
+                {
+                    "name": "Markus Simon",
+                    "email": "markus.simon2@klarna.com",
+                    "role": "Developer"
+                },
+                {
+                    "name": "Fei Chen",
+                    "email": "fei.chen@klarna.com",
+                    "role": "Developer"
+                },
+                {
+                    "name": "Jason Grim",
+                    "email": "jason.grim@klarna.com",
+                    "role": "Developer"
+                }
+            ],
             "description": "Klarna Payments Magento 2 Extension"
         },
         {
@@ -2166,6 +2230,18 @@
             },
             "license": [
                 "Apache-2.0"
+            ],
+            "authors": [
+                {
+                    "name": "Dario Kassler",
+                    "email": "dario.kassler@klarna.com",
+                    "role": "Developer"
+                },
+                {
+                    "name": "Markus Simon",
+                    "email": "markus.simon2@klarna.com",
+                    "role": "Developer"
+                }
             ],
             "description": "Klarna KpGraphQl Magento 2 Extension"
         },
@@ -2199,6 +2275,18 @@
             "license": [
                 "Apache-2.0"
             ],
+            "authors": [
+                {
+                    "name": "Joe Constant",
+                    "email": "joe.constant@klarna.com",
+                    "role": "Developer"
+                },
+                {
+                    "name": "Markus Simon",
+                    "email": "markus.simon2@klarna.com",
+                    "role": "Developer"
+                }
+            ],
             "description": "Klarna OnSite Messaging Magento 2 Extension"
         },
         {
@@ -2229,6 +2317,38 @@
             },
             "license": [
                 "Apache-2.0"
+            ],
+            "authors": [
+                {
+                    "name": "Joe Constant",
+                    "email": "joe.constant@klarna.com",
+                    "role": "Developer"
+                },
+                {
+                    "name": "Dario Kassler",
+                    "email": "dario.kassler@klarna.com",
+                    "role": "Developer"
+                },
+                {
+                    "name": "Kenny Gilles",
+                    "email": "kenny.gilles@klarna.com",
+                    "role": "Developer"
+                },
+                {
+                    "name": "Markus Simon",
+                    "email": "markus.simon2@klarna.com",
+                    "role": "Developer"
+                },
+                {
+                    "name": "Fei Chen",
+                    "email": "fei.chen@klarna.com",
+                    "role": "Developer"
+                },
+                {
+                    "name": "Jason Grim",
+                    "email": "jason.grim@klarna.com",
+                    "role": "Developer"
+                }
             ],
             "description": "Klarna Order Management Magento 2 Extension"
         },
@@ -16786,6 +16906,11 @@
                 "magento/framework": "103.0.*||>=102.0.6-p1"
             },
             "type": "magento2-module",
+            "extra": {
+                "patches_applied": {
+                    "Either remote URL or hashable content is required to whitelist": "https://raw.githubusercontent.com/zero1limited/magento2-patches/eb137aaaf90ffa86add6566116d08723b1acfc26/patches/Ebizmarts_Mailchimp_mailchimpjs.patch"
+                }
+            },
             "autoload": {
                 "psr-4": {
                     "Ebizmarts\\MailChimp\\": ""
@@ -19762,6 +19887,39 @@
             "time": "2021-06-06T09:51:56+00:00"
         },
         {
+            "name": "taxjar/module-taxjar",
+            "version": "1.6.5",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/taxjar/taxjar-magento2-extension.git",
+                "reference": "e4dcd997af14287a92429e590c79e43860796100"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/taxjar/taxjar-magento2-extension/zipball/e4dcd997af14287a92429e590c79e43860796100",
+                "reference": "e4dcd997af14287a92429e590c79e43860796100",
+                "shasum": ""
+            },
+            "require": {
+                "magento/framework": "^100.1.0|^101.0.0|^102.0.0|^103.0.0"
+            },
+            "type": "magento2-module",
+            "autoload": {
+                "files": [
+                    "registration.php"
+                ],
+                "psr-4": {
+                    "Taxjar\\SalesTax\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "OSL-3.0"
+            ],
+            "description": "TaxJar Sales Tax Module for Magento 2",
+            "time": "2021-07-08T19:06:53+00:00"
+        },
+        {
             "name": "tedivm/jshrink",
             "version": "v1.3.3",
             "source": {
@@ -20245,6 +20403,14 @@
             "type": "metapackage",
             "license": [
                 "proprietary"
+            ],
+            "authors": [
+                {
+                    "name": "Mediotype",
+                    "email": "diveinto@mediotype.com",
+                    "homepage": "http://www.mediotype.com/",
+                    "role": "Development Company"
+                }
             ],
             "description": "Vertex Tax Links for Magento 2",
             "homepage": "http://go.vertexsmb.com/magento_cbe",

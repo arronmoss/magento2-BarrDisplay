@@ -335,6 +335,7 @@ return [
         'ShipperHQ_Common' => 1,
         'ShipperHQ_Logger' => 1,
         'ShipperHQ_Shipper' => 1,
+        'Taxjar_SalesTax' => 1,
         'Temando_ShippingRemover' => 1,
         'Vertex_Tax' => 1,
         'Vertex_AddressValidationApi' => 1,
@@ -348,7 +349,7 @@ return [
             'catalog' => [
                 'navigation' => [
                     'max_depth' => '2'
-                ],
+                ]
             ],
             'carriers' => [
                 'shipper' => [

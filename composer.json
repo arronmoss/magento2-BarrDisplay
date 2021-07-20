@@ -23,6 +23,7 @@
         "markshust/magento2-module-disabletwofactorauth": "^1.1",
         "mdoq/module-connector": "^1.4",
         "shipperhq/module-shipper": "^20.40",
+        "taxjar/module-taxjar": "^1.6",
         "zero1limited/magento2-patches": "^1.0"
     },
     "autoload": {
