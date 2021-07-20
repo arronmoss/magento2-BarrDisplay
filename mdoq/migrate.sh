@@ -100,6 +100,8 @@ bin/magento config:set smtp/configuration_option/protocol tls
 bin/magento config:set smtp/configuration_option/authentication login
 bin/magento config:set smtp/configuration_option/username noreply@barrdisplay.com
 bin/magento config:set smtp/configuration_option/return_path_email sales@barrdisplay.com
+bin/magento config:set smtp/configuration_option/password 'JPbarr2016!'
+
 bin/magento config:set smtp/module/active 1
 bin/magento config:set smtp/module/product_key NNOWT7K8WQXELA8FJCU18RV15TCX90R41NCZWT0C
 bin/magento config:set smtp/module/email arron.moss@zero1.co.uk
