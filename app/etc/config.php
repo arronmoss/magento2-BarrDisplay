@@ -349,23 +349,23 @@ return [
             'catalog' => [
                 'navigation' => [
                     'max_depth' => '2'
+                ],
+                'search' => [
+                    'engine' => 'elasticsuite'
                 ]
             ],
-            'instore' => [
-                'active' => '1'
-            ]
-        ],
-        'sales' => [
-            'minimum_order' => [
-                'active' => '1',
-                'amount' => '25',
-                'low_order_fee_active' => '1',
-                'low_order_fee' => '5',
-                'low_order_fee_method' => 'fixed',
-                'low_order_fee_customer_group_enable' => '0',
-                'low_order_fee_reference' => 'BaseSubtotalWithDiscount',
-                'low_order_fee_tax_class' => '0',
-                'low_order_fee_tax_includes_class' => '0'
+            'sales' => [
+                'minimum_order' => [
+                    'active' => '1',
+                    'amount' => '25',
+                    'low_order_fee_active' => '1',
+                    'low_order_fee' => '5',
+                    'low_order_fee_method' => 'fixed',
+                    'low_order_fee_customer_group_enable' => '0',
+                    'low_order_fee_reference' => 'BaseSubtotalWithDiscount',
+                    'low_order_fee_tax_class' => '0',
+                    'low_order_fee_tax_includes_class' => '0'
+                ]
             ]
         ]
     ]
