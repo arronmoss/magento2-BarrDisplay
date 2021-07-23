@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "15e8308cdab6f9bf9e39cf3de1c373c8",
+    "content-hash": "30a44a9ff90b3b46e0725a9069a0a98a",
     "packages": [
         {
             "name": "2tvenom/cborencode",
@@ -18519,6 +18519,70 @@
             "time": "2020-09-17T09:20:05+00:00"
         },
         {
+            "name": "shipperhq/module-option",
+            "version": "20.5.3",
+            "source": {
+                "type": "git",
+                "url": "git@github.com:webshopapps/module-option.git",
+                "reference": "f33166a4f62fb4eb38b1a6460fcb06a39ec2d17f"
+            },
+            "dist": {
+                "type": "tar",
+                "url": "https://packages.shipperhq.com/dist/shipperhq/module-option/shipperhq-module-option-f33166a4f62fb4eb38b1a6460fcb06a39ec2d17f-zip-417b53.tar",
+                "reference": "f33166a4f62fb4eb38b1a6460fcb06a39ec2d17f",
+                "shasum": "e9005f1d6f2d7367d25618829330ed5b899e58cf"
+            },
+            "require": {
+                "shipperhq/library-shipper": "^20.12",
+                "shipperhq/module-common": "^20.8",
+                "shipperhq/module-shipper": "^20.34"
+            },
+            "require-dev": {
+                "fabpot/php-cs-fixer": "~1.2",
+                "magento-ecg/coding-standard": "^2.0",
+                "pdepend/pdepend": "^2.2",
+                "phpmd/phpmd": "@stable",
+                "phpunit/phpunit": "^4.1",
+                "sebastian/phpcpd": "^2.0",
+                "squizlabs/php_codesniffer": "^1.5"
+            },
+            "type": "magento2-module",
+            "autoload": {
+                "files": [
+                    "src/registration.php"
+                ],
+                "psr-4": {
+                    "ShipperHQ\\Option\\": "src/"
+                }
+            },
+            "autoload-dev": {
+                "psr-4": {
+                    "ShipperHQ\\Option\\Test\\": "tests/"
+                }
+            },
+            "license": [
+                "OSL-3.0",
+                "AFL-3.0"
+            ],
+            "authors": [
+                {
+                    "name": "ShipperHQ",
+                    "email": "sales@shipperhq.com",
+                    "homepage": "http://www.Shipperhq.com"
+                },
+                {
+                    "name": "Zowta LLC"
+                }
+            ],
+            "description": "ShipperHQ Option functionality",
+            "support": {
+                "documentation": "http://docs.shipperhq.com",
+                "source": "https://github.com/webshopapps/module-option/tree/20.5.3",
+                "issues": "https://github.com/webshopapps/module-option/issues"
+            },
+            "time": "2021-02-11T10:26:08+00:00"
+        },
+        {
             "name": "shipperhq/module-shipper",
             "version": "20.44.1",
             "source": {
@@ -24789,6 +24853,7 @@
             ],
             "description": "Provides a list of PHP built-in functions that operate on resources",
             "homepage": "https://www.github.com/sebastianbergmann/resource-operations",
+            "abandoned": true,
             "time": "2020-09-28T06:45:17+00:00"
         },
         {

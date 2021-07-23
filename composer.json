@@ -23,6 +23,7 @@
         "markshust/magento2-module-disabletwofactorauth": "^1.1",
         "mdoq/module-connector": "^1.4",
         "rootways/module-authorizenetcim": "^2.0",
+        "shipperhq/module-option": "^20.5",
         "shipperhq/module-shipper": "^20.40",
         "taxjar/module-taxjar": "^1.6",
         "zero1limited/magento2-patches": "^1.0"
@@ -87,7 +88,11 @@
         "ebizmarts": {
             "type": "composer",
             "url": "https://packages.ebizmarts.com"
-        }
+        },
+	"shipperhq": {
+	    "type": "composer",
+	    "url": "https://packages.shipperhq.com"
+	}
     },
     "extra": {
         "magento-force": "override",

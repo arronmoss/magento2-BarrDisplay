@@ -336,6 +336,7 @@ return [
         'ShipperHQ_Common' => 1,
         'ShipperHQ_Logger' => 1,
         'ShipperHQ_Shipper' => 1,
+        'ShipperHQ_Option' => 1,
         'Taxjar_SalesTax' => 1,
         'Temando_ShippingRemover' => 1,
         'Vertex_Tax' => 1,
