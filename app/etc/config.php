@@ -344,7 +344,8 @@ return [
         'Vertex_AddressValidation' => 1,
         'Yotpo_Yotpo' => 1,
         'Zero1_Csp' => 1,
-        'Zero1_Patches' => 1
+        'Zero1_Patches' => 1,
+        'Zero1_SubCategoryListing' => 1
     ],
     'system' => [
         'default' => [

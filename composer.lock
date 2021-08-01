@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "30a44a9ff90b3b46e0725a9069a0a98a",
+    "content-hash": "02ee2fe38cdfe0c3fda597051c724e85",
     "packages": [
         {
             "name": "2tvenom/cborencode",
@@ -20766,6 +20766,30 @@
             "description": "Bundling metapackage for yotpo/magento2-module-yotpo-reviews: Yotpo Reviews extension for Magento2"
         },
         {
+            "name": "zero1/module-sub-category-listing",
+            "version": "1.0.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/zero1limited/magento2-sub-category-listing",
+                "reference": "eeafa6e0900b601d62aacc4c858ce7e809ff9256"
+            },
+            "type": "magento2-module",
+            "autoload": {
+                "files": [
+                    "registration.php"
+                ],
+                "psr-4": {
+                    "Zero1\\SubCategoryListing\\": ""
+                }
+            },
+            "license": [
+                "OSL-3.0",
+                "AFL-3.0"
+            ],
+            "description": "Adds the ability to display a sub category listing on all or specific categories",
+            "time": "2021-07-16T07:57:22+00:00"
+        },
+        {
             "name": "zero1limited/magento2-patches",
             "version": "1.0.11",
             "source": {
@@ -21473,6 +21497,7 @@
                 }
             ],
             "description": "Guzzle6 transport for Vault PHP client",
+            "abandoned": true,
             "time": "2019-03-10T06:17:37+00:00"
         },
         {
