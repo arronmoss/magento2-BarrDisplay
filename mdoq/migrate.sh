@@ -112,11 +112,8 @@ bin/magento config:set smtp/general/enabled 1
 
 bin/magento config:set twofactorauth/general/enable 0
 
-
 bin/magento config:set cataloginventory/item_options/min_sale_qty 1
 bin/magento config:set cataloginventory/item_options/min_qty 1
-
-
 
 # https://zero1.teamwork.com/#/tasks/24020245 Google Analytics
 # Not required, pulling value from M1
@@ -128,7 +125,10 @@ bin/magento config:set -- catalog/frontend/flat_catalog_category 0
 bin/magento config:set -- catalog/frontend/flat_catalog_product 0
 
 # https://zero1.teamwork.com/#/tasks/24635208
-php bin/magento config:set sales/totals_sort/loworderfee 35
+bin/magento config:set sales/totals_sort/loworderfee 35
+
+# Instore Collect
+#bin/magento config:set carriers/instore/active 1
 
 # https://zero1.teamwork.com/#/tasks/24020248  - THROWS EXCEPTION 
 # Unable to serialize value. Error: Malformed UTF-8 characters, possibly incorrectly encoded
