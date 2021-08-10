@@ -52,6 +52,7 @@
                 <value id="paypal" type="host">*.paypal.com</value>
                 <value id="doubleclick" type="host">stats.g.doubleclick.net</value>
                 <value id="google-analytics" type="host">*.google-analytics.com</value>
+                <value id="authorize-net" type="host">*.authorize.net</value>
             </values>
         </policy>
         <policy id="font-src">
