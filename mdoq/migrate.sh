@@ -115,6 +115,8 @@ bin/magento config:set twofactorauth/general/enable 0
 bin/magento config:set cataloginventory/item_options/min_sale_qty 1
 bin/magento config:set cataloginventory/item_options/min_qty 1
 
+# Change title of click and collect
+bin/magento config:set carriers/instore/name 'Pick Up Locations'
 
 # https://zero1.teamwork.com/#/tasks/24020245 Google Analytics
 # Not required, pulling value from M1
