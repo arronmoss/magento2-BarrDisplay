@@ -1,0 +1,149 @@
+<?php
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
+// phpcs:disable Magento2.Templates.ThisInTemplate
+// phpcs:disable Generic.Files.LineLength.TooLong
+
+/** @var \Magento\Contact\Block\ContactForm $block */
+/** @var \Magento\Contact\ViewModel\UserDataProvider $viewModel */
+
+$viewModel = $block->getViewModel();
+?>
+
+<form class="form contact"
+      action="<?= $block->escapeUrl($block->getFormAction()) ?>"
+      id="contact-form"
+      method="post"
+      data-hasrequired="<?= $block->escapeHtmlAttr(__('* Required Fields')) ?>"
+      data-mage-init='{"validation":{}}'>
+    <fieldset class="fieldset">
+        <h2><?= $block->escapeHtml(__('Contact Us')) ?></h2><br />
+        <div class="field companyname required">
+            <label class="label" for="companyname"><span><?= $block->escapeHtml(__('Company Name')) ?></span></label>
+            <div class="control">
+                <input name="companyname"
+                       id="companyname"
+                       title="<?= $block->escapeHtmlAttr(__('Company Name')) ?>"
+                       class="input-text"
+                       type="text"
+                       data-validate="{required:true}"/>
+            </div>
+        </div>
+        <div class="field name required">
+            <label class="label" for="name"><span><?= $block->escapeHtml(__('Contact Name')) ?></span></label>
+            <div class="control">
+                <input name="name"
+                       id="name"
+                       title="<?= $block->escapeHtmlAttr(__('Contact Name')) ?>"
+                       value="<?= $block->escapeHtmlAttr($viewModel->getUserName()) ?>"
+                       class="input-text"
+                       type="text"
+                       data-validate="{required:true}"/>
+            </div>
+        </div>
+        <div class="field email required">
+            <label class="label" for="email"><span><?= $block->escapeHtml(__('Email')) ?></span></label>
+            <div class="control">
+                <input name="email"
+                       id="email"
+                       title="<?= $block->escapeHtmlAttr(__('Email')) ?>"
+                       value="<?= $block->escapeHtmlAttr($viewModel->getUserEmail()) ?>"
+                       class="input-text"
+                       type="email"
+                       data-validate="{required:true, 'validate-email':true}"/>
+            </div>
+        </div>
+        <div class="field telephone required">
+            <label class="label" for="telephone"><span><?= $block->escapeHtml(__('Phone Number')) ?></span></label>
+            <div class="control">
+                <input name="telephone"
+                       id="telephone"
+                       title="<?= $block->escapeHtmlAttr(__('Phone Number')) ?>"
+                       value="<?= $block->escapeHtmlAttr($viewModel->getUserTelephone()) ?>"
+                       class="input-text"
+                       data-validate="{required:true}"
+                       type="tel" />
+            </div>
+        </div>
+        <div class="field address required">
+            <label class="label" for="address"><span><?= $block->escapeHtml(__('Street Address')) ?></span></label>
+            <div class="control">
+                <input name="address"
+                       id="address"
+                       title="<?= $block->escapeHtmlAttr(__('Street Address')) ?>"
+                       class="input-text"
+                       data-validate="{required:true}"
+                       type="text" />
+            </div>
+        </div>
+        <div class="field city required">
+            <label class="label" for="city"><span><?= $block->escapeHtml(__('City')) ?></span></label>
+            <div class="control">
+                <input name="city"
+                       id="city"
+                       title="<?= $block->escapeHtmlAttr(__('City')) ?>"
+                       class="input-text"
+                       data-validate="{required:true}"
+                       type="text" />
+            </div>
+        </div>
+        <div class="field state required">
+            <label class="label" for="state"><span><?= $block->escapeHtml(__('State')) ?></span></label>
+            <div class="control">
+                <input name="state"
+                       id="state"
+                       title="<?= $block->escapeHtmlAttr(__('State')) ?>"
+                       class="input-text"
+                       data-validate="{required:true}"
+                       type="text" />
+            </div>
+        </div>
+        <div class="field zip required">
+            <label class="label" for="zip"><span><?= $block->escapeHtml(__('Zip')) ?></span></label>
+            <div class="control">
+                <input name="zip"
+                       id="zip"
+                       title="<?= $block->escapeHtmlAttr(__('Zip')) ?>"
+                       class="input-text"
+                       data-validate="{required:true}"
+                       type="number" />
+            </div>
+        </div>
+        <div class="field comment required">
+            <label class="label" for="comment">
+                <span><?= $block->escapeHtml(__('What’s on your mind?')) ?></span>
+            </label>
+            <div class="control">
+                <textarea name="comment"
+                          id="comment"
+                          title="<?= $block->escapeHtmlAttr(__('What’s on your mind?')) ?>"
+                          class="input-text"
+                          cols="5"
+                          rows="3"
+                          data-validate="{required:true}"
+                ><?= $block->escapeHtml($viewModel->getUserComment()) ?></textarea>
+            </div>
+        </div>
+        <?= $block->getChildHtml('form.additional.info') ?>
+    </fieldset>
+    <div class="actions-toolbar">
+        <div class="primary">
+            <input type="hidden" name="hideit" id="hideit" value="" />
+            <button type="submit" title="<?= $block->escapeHtmlAttr(__('Submit')) ?>" class="action submit primary">
+                <span><?= $block->escapeHtml(__('Submit')) ?></span>
+            </button>
+        </div>
+    </div>
+</form>
+<script type="text/x-magento-init">
+    {
+        "*": {
+            "Magento_Customer/js/block-submit-on-send": {
+                "formId": "contact-form"
+            }
+        }
+    }
+</script>

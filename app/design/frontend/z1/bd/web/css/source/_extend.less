@@ -296,7 +296,7 @@ a:hover,
 				font-size: 12px;
 			}
 			.product-item-inner {
-				display: none;
+				// display: none; sean
 			}
 	    }
 	}
@@ -705,7 +705,7 @@ a:hover,
 		background: #fff;
 		border: 1px solid #ddd;
 		border-top: 0;
-		box-shadow: 0px 5px 2px rgba(0,0,0,0.25);
+		z-index: 2;
 	}
 	.products-grid .product-item:hover .product-item-inner {
 		display: block;
@@ -772,12 +772,30 @@ a:hover,
 	}
 }
 
-
 .sub-category-item {transition: all ease-in-out 100ms;}
-.sub-category-item img {margin: 0 auto -25px;max-width: 180px;}
+.sub-category-item img {margin: 0 auto -25px;max-width: 180px;max-height: 160px;}
 .sub-category-item span {z-index: 2;background: rgba(160, 0, 0, 0.75);position: relative;display: block;padding: 10px;color: #f8f8f8;text-decoration: none;}
-.sub-category-item:hover {transform: scale(1.05);box-shadow: 0px 2px 5px rgb(0, 0, 0);}
+.sub-category-item span span {background: none;text-decoration: none;}
+.sub-category-item:hover {transform: scale(1.05);box-shadow: 0px 2px 5px rgb(0, 0, 0);padding: 0;}
+.catalog-product-view .block.upsell {float: left; width: 100%;}
+.checkout-index-index .table-checkout-shipping-method {width: 100%;}
+.table-checkout-shipping-method tbody tr {width: 100%;margin-left: 0px;}
+.table-checkout-shipping-method tbody tr.row-error {border: none;}
+.table-checkout-shipping-method tbody tr.row-error .col-error {flex: auto; width: 100%}
 
+#onepage-checkout-shipping-method-additional-load .shq-title, .shq-input {font-size: 15px;position: relative;margin: 10px 0;}
+#onepage-checkout-shipping-method-additional-load .shq-input .label, .shq-title .label {position: absolute;top: 2px;left: 25px;}
+#onepage-checkout-shipping-method-additional-load .form.methods-shipping select, .form.methods-shipping input {font-size: 15px !important;height: 40px;}
 
+.shipperhq_option_title {background: #63b369;text-align: left;color: #fff;padding: 20px;margin: -20px -20px 10px -20px;}
+.shipperhq_option_freight {display: block;border: 1px solid #cfcfcf;padding: 20px;}
+.shipperhq_option_title h5 {font-size: 19px;font-weight: bold;margin: 10px 0 20px 0;}
 
+.checkout-index-index #checkout-step-store-selector .actions-toolbar .secondary .action {padding: 17px;margin: 0 0 0 20px;}
+.checkout-index-index .no-selected-location {margin: 20px 0;}
+.checkout-index-index #opc-store-selector-popup .store-selector-search .action.search {top: -10px;}
+.checkout-index-index .store-selector-popup-table .row {margin: 0;}
+.checkout-index-index .store-selector-popup-table tbody .col-location-actions .action {background: #9f1f1c;border: none;color: #fff;}
 
+.checkout-cart-index #co-shipping-method-form label.label[for="s_method_instore_pickup"] span.price {display: none;}
+.checkout-cart-index #co-shipping-method-form label.label[for="s_method_instore_pickup"]:after {content: '(You can choose your location during checkout)';display: inline-block; float: left; width: 100%;font-size: 13px; padding-left: 20px;}

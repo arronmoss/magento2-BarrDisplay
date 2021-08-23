@@ -110,6 +110,10 @@ bin/magento config:set smtp/module/name 'Julia Prestia'
 #bin/magento config:set smtp/module/subscribe 1
 bin/magento config:set smtp/general/enabled 1
 
+/* Set new homepage */
+bin/magento config:set web/default/cms_home_page home_m2
+
+
 bin/magento config:set twofactorauth/general/enable 0
 
 bin/magento config:set cataloginventory/item_options/min_sale_qty 1
