@@ -342,6 +342,8 @@ return [
         'Vertex_Tax' => 1,
         'Vertex_AddressValidationApi' => 1,
         'Vertex_AddressValidation' => 1,
+        'Wyomind_Framework' => 1,
+        'Wyomind_QuickOrder' => 1,
         'Yotpo_Yotpo' => 1,
         'Zero1_Csp' => 1,
         'Zero1_Patches' => 1,

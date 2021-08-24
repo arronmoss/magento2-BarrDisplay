@@ -26,6 +26,7 @@
         "shipperhq/module-option": "^20.5",
         "shipperhq/module-shipper": "^20.40",
         "taxjar/module-taxjar": "^1.6",
+        "wyomind/quickorder": "^1.5",
         "zero1/module-sub-category-listing": "^1.0",
         "zero1limited/magento2-patches": "^1.0"
     },
@@ -97,6 +98,10 @@
         "zero1-magento2": {
             "type": "git",
             "url": "https://github.com/zero1limited/magento2-sub-category-listing"
+        },
+        "wyomind": {
+            "type": "composer",
+            "url": "https://juliap_barrdisplay_com:67860cd9530b510c9bfb8850@repo.wyomind.com"
         }
     },
     "extra": {
