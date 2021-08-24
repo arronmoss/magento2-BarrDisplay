@@ -165,6 +165,11 @@ bin/magento maintenance:disable
 curl -X POST --data-urlencode "payload={\"channel\": \"#barrdisplay\", \"username\": \"webhookbot\", \"text\": \"Prod Instance Migration Completed\", \"icon_emoji\": \":partying_face:\"}" https://hooks.slack.com/services/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
 echo "migration complete" > mdoq/.migrate
 
+# without configuring these, instore commands fail.
+bin/magento config:set -- carriers/shipper/api_key 'dcbf6f094ad3ae0b8bfa865d72ecd244'
+bin/magento config:set -- carriers/shipper/password '3e50ae67a90d1989891ee0b47d295b401fc3695e2f46a5221a'
+
+
 # Change title of click and collect
 # These seem to fail all the time for some reason, moving to the end.
 bin/magento config:set -- carriers/instore/active 1
